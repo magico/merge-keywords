@@ -1,11 +1,5 @@
 const separator = " ";
-
-$(document).ready(function(){
-	// Merge text when submit button is clicked
-	$("#submit").click(function(event){
-	    merge();
-  	});
-});
+const button = document.getElementById("submit");
 
 function print(message) {
 	const outputDiv = document.getElementById('output');
@@ -49,3 +43,7 @@ function merge() {
 	let arrayC = document.getElementById("textarea-c").value.split('\n');
 	print(mergeLists(arrayA, arrayB,arrayC).join("\n"));
 }
+
+button.addEventListener('click', () => {
+	merge();
+});
