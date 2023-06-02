@@ -1,4 +1,3 @@
-const separator = " ";
 const button = document.getElementById("submit");
 
 function print(message) {
@@ -6,7 +5,7 @@ function print(message) {
 	outputDiv.value = message;
 };
 
-function mergeLists(arrayA, arrayB, arrayC){
+function mergeLists(separator, arrayA, arrayB, arrayC){
 	let list = [];
 	for (let ia = 0; ia < arrayA.length; ia++){
 		for (let ib = 0; ib < arrayB.length; ib++){
@@ -38,10 +37,11 @@ function mergeLists(arrayA, arrayB, arrayC){
 }
 
 function merge() {
+	let separator = document.getElementById("separator").value;
 	let arrayA = document.getElementById("textarea-a").value.split('\n');
 	let arrayB = document.getElementById("textarea-b").value.split('\n');
 	let arrayC = document.getElementById("textarea-c").value.split('\n');
-	print(mergeLists(arrayA, arrayB,arrayC).join("\n"));
+	print(mergeLists(separator, arrayA, arrayB, arrayC).join("\n"));
 }
 
 button.addEventListener('click', () => {
